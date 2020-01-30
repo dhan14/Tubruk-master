@@ -14,6 +14,11 @@ public class play extends tombol
      */
     public void act() 
     {
-        // Add your action code here.
+if(Greenfoot.mouseClicked(this)){
+
+            World Start = getWorld();
+            Start = new lv1();
+            Greenfoot.setWorld(Start);
+        }
     }    
 }

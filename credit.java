@@ -14,6 +14,11 @@ public class credit extends tombol
      */
     public void act() 
     {
-        // Add your action code here.
+if(Greenfoot.mouseClicked(this)){
+
+            World Start = getWorld();
+            Start = new creditMe();
+            Greenfoot.setWorld(Start);
+        }
     }    
 }

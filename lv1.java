@@ -9,7 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class lv1 extends groupLevel
 {
-
     /**
      * Constructor for objects of class lv1.
      * 
@@ -17,7 +16,10 @@ public class lv1 extends groupLevel
     public lv1()
     {
         prepare();
+        started();
+        stopped();
     }
+    
 
     /**
      * Prepare the world for the start of the program.
@@ -26,6 +28,7 @@ public class lv1 extends groupLevel
     private void prepare()
     {
         pintu pintu = new pintu();
+        
         addObject(pintu,335,349);
         //Tembok
         tembok tembok = new tembok();
@@ -51,5 +54,25 @@ public class lv1 extends groupLevel
         addObject(player,910,48);
         tembok5.setLocation(548,22);
         tembok6.setLocation(226,72);
+        tembok5.setLocation(16,15);
+        pintu.setLocation(28,8);
+        pintu.setLocation(13,24);
+        tembok6.setLocation(13,24);
+        tembok6.setLocation(15,8);
+        player.setLocation(28,8);
+        tembok5.setLocation(17,15);
+        pintu.setLocation(1,28);
+        tembok.setLocation(39,29);
+        tembok.setLocation(6,16);
+        tembok4.setLocation(1,12);
+        tembok.setLocation(4,25);
+        removeObject(tembok3);
+        removeObject(tembok2);
+        pintu.setLocation(1,27);
+        pintu.setLocation(1,22);
     }
+    public void started(){
+        music();
+    }
+
 }

@@ -16,7 +16,7 @@ public class menu extends World
     public menu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(950, 600, 1); 
+        super(40, 30, 20); 
         prepare();
     }
 
@@ -26,17 +26,17 @@ public class menu extends World
      */
     private void prepare()
     {
-        howTo howTo = new howTo();
-        addObject(howTo,789,523);
-        credit credit = new credit();
-        addObject(credit,470,520);
+
         play play = new play();
-        addObject(play,174,515);
-        credit.setLocation(411,517);
-        howTo.setLocation(663,505);
-        howTo.setLocation(783,527);
-        credit.setLocation(515,515);
-        credit.setLocation(555,498);
-        credit.setLocation(477,522);
+        addObject(play,7,27);
+        howTo howTo = new howTo();
+        addObject(howTo,19,26);
+        howTo.setLocation(20,27);
+        credit credit = new credit();
+        addObject(credit,32,27);
+        removeObject(howTo);
+        credit.setLocation(24,27);
+        play.setLocation(14,25);
+        credit.setLocation(26,25);
     }
 }

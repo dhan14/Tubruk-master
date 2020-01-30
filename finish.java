@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class finish extends groupLevel
+public class finish extends World
 {
 
     /**
@@ -15,5 +15,17 @@ public class finish extends groupLevel
      */
     public finish()
     {
+        super(40, 30, 20);
+        prepare();
+    }
+
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        back back = new back();
+        addObject(back,20,27);
     }
 }

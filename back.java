@@ -14,6 +14,10 @@ public class back extends tombol
      */
     public void act() 
     {
-        // Add your action code here.
+if(Greenfoot.mouseClicked(this)){
+            World Start = getWorld();
+            Start = new menu();
+            Greenfoot.setWorld(Start);
+        }
     }    
 }

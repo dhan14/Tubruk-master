@@ -12,6 +12,7 @@ public class player extends objek
      * Act - do whatever the player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    private int speed = 1;
     public void act() 
     {
         // panggil perintah.
@@ -19,44 +20,43 @@ public class player extends objek
         naikLevelSatu();
         naikLevelDua();
         naikLevelTiga();
-        tampil();
     }
 
     public void bergerak() 
     {
         //MAJU
         if(Greenfoot.isKeyDown("s")){
-            setLocation(getX(), getY()+20);
+            setLocation(getX(), getY()+(speed));
             if (tubrukTembok()== true)
             {
-                setLocation(getX(), getY()-20);
+                setLocation(getX(), getY()-(speed));
             }
 
         }
         //MUNDUR
         if(Greenfoot.isKeyDown("w")){
-            setLocation(getX(), getY()-20);
+            setLocation(getX(), getY()-(speed));
             if (tubrukTembok()== true)
             {
-                setLocation(getX(), getY()+20);
+                setLocation(getX(), getY()+(speed));
             }
 
         }
         //kiri
         if(Greenfoot.isKeyDown("d")){
-            setLocation(getX()+20, getY());
+            setLocation(getX()+(speed), getY());
             if (tubrukTembok()== true)
             {
-                setLocation(getX()-20, getY());
+                setLocation(getX()-(speed), getY());
             }
 
         }
         //kanan
         if(Greenfoot.isKeyDown("a")){
-            setLocation(getX()-20, getY());
+            setLocation(getX()-(speed), getY());
             if (tubrukTembok()== true)
             {
-                setLocation(getX()+20, getY());
+                setLocation(getX()+(speed), getY());
             }
 
         }
@@ -74,6 +74,15 @@ public class player extends objek
         return false;
     }
     //Naik level
+    public void naikLevelTiga()
+    {
+        if (isTouching(pintu3.class))
+        {
+            World Start = getWorld();
+            Start = new finish();
+            Greenfoot.setWorld(Start);
+        }
+    }
     public void naikLevelSatu()
     {
         if (isTouching(pintu.class))
@@ -87,7 +96,7 @@ public class player extends objek
 
     public void naikLevelDua()
     {
-        if (isTouching(pintu2.class))
+        if (isTouching(pintu4.class))
         {
             ((lv2)getWorld()).stopped();
             World Start = getWorld();
@@ -96,17 +105,5 @@ public class player extends objek
         }
     }
 
-    public void naikLevelTiga()
-    {
-        if (isTouching(pintu3.class))
-        {
-            ((lv3)getWorld()).stopped();
-            World Start = getWorld();
-            Start = new finish();
-            Greenfoot.setWorld(Start);
-        }
-    }
-    private void tampil(){
-        getWorld().showText(("posisi x=" + getX() + ("dan posisi y=" + getY())),150,200);
-    }
+  
 }
